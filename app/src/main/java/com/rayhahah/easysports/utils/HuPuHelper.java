@@ -1,7 +1,5 @@
 package com.rayhahah.easysports.utils;
 
-import android.util.Log;
-
 import com.rayhahah.easysports.app.C;
 import com.rayhahah.easysports.utils.security.MD5;
 import com.rayhahah.rbase.utils.useful.SPManager;
@@ -69,8 +67,6 @@ public class HuPuHelper {
             if (builder.length() > 0) {
                 builder.append("&");
             }
-            Log.e("TAG", "getRequestSign: ");
-            Log.e("TAG", "getRequestSign: ");
             Map.Entry<String, String> map1 = list.get(i);
             builder.append(map1.getKey()).append("=").append(map1.getValue());
         }
