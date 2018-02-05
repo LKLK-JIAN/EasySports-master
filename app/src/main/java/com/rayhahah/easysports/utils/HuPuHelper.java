@@ -70,6 +70,7 @@ public class HuPuHelper {
                 builder.append("&");
             }
             Log.e("TAG", "getRequestSign: ");
+            Log.e("TAG", "getRequestSign: ");
             Map.Entry<String, String> map1 = list.get(i);
             builder.append(map1.getKey()).append("=").append(map1.getValue());
         }
