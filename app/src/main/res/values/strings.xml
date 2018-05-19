@@ -40,7 +40,7 @@
     <string name="PERMISSION_DENIED">授权失败</string>
 
     <!--homepage-->
-    <string name="app_name">EasySports</string>
+    <string name="app_name">SPORT</string>
     <string name="match">比赛</string>
     <string name="info">ֱ数据</string>
     <string name="forum">社区</string>
