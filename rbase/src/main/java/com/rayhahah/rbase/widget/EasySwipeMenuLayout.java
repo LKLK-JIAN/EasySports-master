@@ -64,7 +64,6 @@ public class EasySwipeMenuLayout extends ViewGroup {
     public EasySwipeMenuLayout(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         init(context, attrs, defStyleAttr);
-
     }
 
     /**
@@ -74,13 +73,14 @@ public class EasySwipeMenuLayout extends ViewGroup {
      * @param attrs
      * @param defStyleAttr
      */
-    private void init(Context context, AttributeSet attrs, int defStyleAttr) {
+        private void init(Context context, AttributeSet attrs, int defStyleAttr) {
         //创建辅助对象
         ViewConfiguration viewConfiguration = ViewConfiguration.get(context);
         mScaledTouchSlop = viewConfiguration.getScaledTouchSlop();
         mScroller = new Scroller(context);
         //1、获取配置的属性值
-        TypedArray typedArray = context.getTheme().obtainStyledAttributes(attrs, R.styleable.EasySwipeMenuLayout, defStyleAttr, 0);
+        TypedArray typedArray =
+                context.getTheme().obtainStyledAttributes(attrs, R.styleable.EasySwipeMenuLayout, defStyleAttr, 0);
 
         try {
             int indexCount = typedArray.getIndexCount();

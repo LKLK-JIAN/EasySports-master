@@ -283,7 +283,7 @@ public class DateTimeUitl {
     /**
      * 获得系统默认格式的日期字符串
      *
-     * @param date
+     * @param datetime
      * @return
      */
     public static Date getSysDefaultDateTime(String datetime) {
@@ -551,12 +551,12 @@ public class DateTimeUitl {
     }
 
 
-    /**
-     * 将时间转换为显示字符串,“简短”格式 2004-8-16 12:8:1
-     *
-     * @param second 相对于 1970年1月1日零时的秒数
-     * @return
-     */
+        /**
+         * 将时间转换为显示字符串,“简短”格式 2004-8-16 12:8:1
+         *
+         * @param second 相对于 1970年1月1日零时的秒数
+         * @return
+         */
     public static String toTimeString(long second) {
         StringBuffer sbRet = new StringBuffer();
         try {

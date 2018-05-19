@@ -66,8 +66,8 @@ public class CacheUtils {
             }
             directory.delete();
         }
-    }
 
+    }
     /**
      * 获取目录文件大小
      */
@@ -84,7 +84,7 @@ public class CacheUtils {
             if (file.isFile()) {
                 dirSize += file.length();
             } else if (file.isDirectory()) {
-                dirSize += file.length();
+                dirSize += file.length();    //多一步，可忽略
                 dirSize += getDirSize(file); // 递归调用继续统计
             }
         }

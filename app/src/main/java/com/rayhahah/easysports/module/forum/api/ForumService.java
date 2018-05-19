@@ -24,7 +24,7 @@ public interface ForumService {
      * @param params
      * @return
      */
-    @GET("forums/getForums")
+        @GET("forums/getForums")
     Observable<ForumsData> getAllForums(@Query("sign") String sign,
                                         @QueryMap Map<String, String> params);
 

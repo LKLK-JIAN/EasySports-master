@@ -18,7 +18,6 @@ import android.support.v4.util.ArrayMap;
 import android.support.v7.app.AppCompatActivity;
 import android.transition.Fade;
 import android.transition.Transition;
-import android.util.Log;
 
 import com.rayhahah.rbase.R;
 import com.rayhahah.rbase.utils.useful.PermissionManager;
@@ -52,13 +51,16 @@ public abstract class RBaseActivity<T extends RBasePresenter, V extends ViewData
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
-        Log.e("TAG", "onCreate: 8888888888888888"+"fhfohak");
+        //将activity放进ActivityCollector管理器
         ActivityCollector.addActivity(this);
+        //设置屏幕方向
         setRequestedOrientation(getOrientation());
         super.onCreate(savedInstanceState);
         mContext = this;
+        //设置主题
         initTheme();
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            //设置过度画面
             initWindowTransition(getWindowTransition());
         }
         int layoutID = getLayoutID();
@@ -66,10 +68,14 @@ public abstract class RBaseActivity<T extends RBasePresenter, V extends ViewData
             setContentView(layoutID);
             mBinding = DataBindingUtil.setContentView(mContext, layoutID);
         }
+        //获取当前主题的颜色
         initThemeAttrs();
+        //初始化沉浸栏的颜色
         setStatusColor();
         mPresenter = getPresenter();
+        //将上一个画面传递过来的值放进valueMap
         initValueFromPrePage();
+        //初始化及数据操作
         initEventAndData(savedInstanceState);
     }
 

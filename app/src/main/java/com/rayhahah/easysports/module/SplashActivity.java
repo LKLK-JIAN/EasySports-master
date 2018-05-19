@@ -48,7 +48,7 @@ public class SplashActivity extends BaseActivity<RBasePresenter, ActivitySplashB
                 .map(new Function<Long, Long>() {
                     @Override
                     public Long apply(@NonNull Long aLong) throws Exception {
-                        return count - aLong;
+                           return count - aLong;
                     }
                 }).compose(RxSchedulers.<Long>ioMain())
                 .subscribe(new Consumer<Long>() {

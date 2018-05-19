@@ -3,7 +3,7 @@ package com.rayhahah.rbase.bean;
 /**
  * 信息封装类
  */
-public class MsgEvent {
+public class    MsgEvent {
 
     private String action;
     private Object data;

@@ -44,6 +44,7 @@ public class MatchFragment extends BaseFragment<MatchPresenter, FragmentMatchBin
 
     @Override
     public void initView(Bundle savedInstanceState) {
+
         mBinding.toolbar.tvToolbarTitle.setText(getResources().getString(R.string.match));
         mBinding.toolbar.ivToolbarRefresh.setVisibility(View.VISIBLE);
         mBinding.toolbar.ivToolbarRefresh.setOnClickListener(new View.OnClickListener() {

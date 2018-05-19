@@ -6,6 +6,7 @@ def releaseTime() {
 }
 
 android {
+
     compileSdkVersion rootProject.ext.compileSdkVersion
     buildToolsVersion rootProject.ext.buildToolsVersion
 
@@ -26,6 +27,7 @@ android {
         }
 
     }
+    //
     signingConfigs {
         config {
             storeFile file("rayhahah.keystore")
@@ -34,6 +36,7 @@ android {
             keyPassword '19940531coding'
         }
     }
+    //
     buildTypes {
         release {
             minifyEnabled false

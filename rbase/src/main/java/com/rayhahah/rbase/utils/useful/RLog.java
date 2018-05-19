@@ -51,7 +51,7 @@ public class RLog {
     //边框
     private static final String TOP_BORDER = "╔═══════════════════════════════════════════════════════════════════════════════════════════════════";
     private static final String LEFT_BORDER = "║ ";
-    private static final String BOTTOM_BORDER = "╚═══════════════════════════════════════════════════════════════════════════════════════════════════";
+    private static final String BOTTOM_BORDER = "╚════════════════════════════════════════════════════════════════════════════════════════════════";
     //换行标识符
     private static final String LINE_SEPARATOR = System.getProperty("line.separator");
     private static final String NULL = "null";

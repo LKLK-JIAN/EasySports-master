@@ -9,13 +9,11 @@ import android.os.Bundle;
 import com.ashokvarma.bottomnavigation.BottomNavigationBar;
 import com.ashokvarma.bottomnavigation.BottomNavigationItem;
 import com.rayhahah.easysports.R;
-import com.rayhahah.easysports.common.BaseActivity;
 import com.rayhahah.easysports.app.C;
+import com.rayhahah.easysports.common.BaseActivity;
 import com.rayhahah.easysports.databinding.ActivityHomeBinding;
-import com.rayhahah.easysports.module.forum.mvp.ForumFragment;
 import com.rayhahah.easysports.module.info.mvp.InfoFragment;
 import com.rayhahah.easysports.module.match.mvp.MatchFragment;
-import com.rayhahah.easysports.module.mine.mvp.MineFragment;
 import com.rayhahah.easysports.module.news.mvp.NewsFragment;
 import com.rayhahah.rbase.base.RBaseFragment;
 import com.rayhahah.rbase.utils.base.ToastUtils;
@@ -23,7 +21,7 @@ import com.rayhahah.rbase.utils.useful.SPManager;
 
 import java.util.ArrayList;
 
-public class HomeActivity extends BaseActivity<HomePresenter, ActivityHomeBinding>
+public class HomeActivity extends BaseActivity<HomePresenter,ActivityHomeBinding>
         implements HomeContract.IHomeView {
 
     private long exitTime = 0;
@@ -38,14 +36,14 @@ public class HomeActivity extends BaseActivity<HomePresenter, ActivityHomeBindin
     @Override
     protected void onNewIntent(Intent intent) {
         super.onNewIntent(intent);
-        setContentView(getLayoutID());
-        mBinding = DataBindingUtil.setContentView(mContext, getLayoutID());
-        initThemeAttrs();
-        setStatusColor();
-        mFragmentList.clear();
-        mBinding.bnbHome.clearAll();
-        initBnb();
-        initFragment();
+            setContentView(getLayoutID());
+            mBinding = DataBindingUtil.setContentView(mContext, getLayoutID());
+            initThemeAttrs();
+            setStatusColor();
+            mFragmentList.clear();
+            mBinding.bnbHome.clearAll();
+            initBnb();
+            initFragment();
     }
 
     public static void start(Context context, Activity preActivity) {
@@ -57,14 +55,14 @@ public class HomeActivity extends BaseActivity<HomePresenter, ActivityHomeBindin
         MatchFragment matchFragment = new MatchFragment();
         NewsFragment newsFragment = new NewsFragment();
         InfoFragment infoFragment = new InfoFragment();
-        ForumFragment forumFragment = new ForumFragment();
-        MineFragment mineFragment = new MineFragment();
+        //ForumFragment forumFragment = new ForumFragment();
+       // MineFragment mineFragment = new MineFragment();
         mFragmentList = new ArrayList<>();
         mFragmentList.add(matchFragment);
         mFragmentList.add(newsFragment);
         mFragmentList.add(infoFragment);
-        mFragmentList.add(forumFragment);
-        mFragmentList.add(mineFragment);
+       // mFragmentList.add(forumFragment);
+       // mFragmentList.add(mineFragment);
 
         String isMine = SPManager.get().getStringValue(C.SP.TAG_MINE_SELECTED, C.FALSE);
         if (C.FALSE.equals(isMine)) {
@@ -115,8 +113,8 @@ public class HomeActivity extends BaseActivity<HomePresenter, ActivityHomeBindin
                 .addItem(getBnbItem(getResources().getString(R.string.match), R.drawable.ic_svg_match_bg_dark_24))
                 .addItem(getBnbItem(getResources().getString(R.string.news), R.drawable.ic_svg_news_bg_dark_24))
                 .addItem(getBnbItem(getResources().getString(R.string.info), R.drawable.ic_svg_info_bg_dark_24))
-                .addItem(getBnbItem(getResources().getString(R.string.forum), R.drawable.ic_svg_forum_bg_dark_24))
-                .addItem(getBnbItem(getResources().getString(R.string.mine), R.drawable.ic_svg_mine_bg_dark_24))
+               // .addItem(getBnbItem(getResources().getString(R.string.forum), R.drawable.ic_svg_forum_bg_dark_24))
+               // .addItem(getBnbItem(getResources().getString(R.string.mine), R.drawable.ic_svg_mine_bg_dark_24))
                 .setMode(BottomNavigationBar.MODE_SHIFTING)
                 .setBackgroundStyle(BottomNavigationBar.BACKGROUND_STYLE_STATIC)
                 .initialise();

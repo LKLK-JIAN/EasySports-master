@@ -19,8 +19,6 @@ public class MatchPresenter extends RBasePresenter<MatchContract.IMatchView>
     public MatchPresenter(MatchContract.IMatchView view) {
         super(view);
     }
-
-
     @Override
     public void addMatchListData(final String date, final int status) {
         addSubscription(MatchApiFactory.getMatchsByData(date)

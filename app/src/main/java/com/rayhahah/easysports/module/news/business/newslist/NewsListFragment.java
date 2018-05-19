@@ -171,7 +171,6 @@ public class NewsListFragment extends BaseFragment<NewsListPresenter, FragmentNe
         }
     }
 
-
     /**
      * 初始化条目列表
      */
@@ -193,6 +192,7 @@ public class NewsListFragment extends BaseFragment<NewsListPresenter, FragmentNe
         mBinding.srlNewsList.setOnRefreshListener(this);
         mBinding.srlNewsList.setColorSchemeColors(mThemeColorMap.get(C.ATTRS.COLOR_PRIMARY));
     }
+
 
     /**
      * 初始化ProgressLayout
